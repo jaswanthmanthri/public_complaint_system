@@ -13,7 +13,7 @@ vercel_url = os.getenv('VERCEL_URL')
 if vercel_url:
     ALLOWED_HOSTS.append(vercel_url)
 
-csrf_trusted_origins = os.getenv('CSRF_TRUSTED_ORIGINS', '')
+csrf_trusted_origins = os.getenv('CSRF_TRUSTED_ORIGINS', 'https://*.vercel.app')
 CSRF_TRUSTED_ORIGINS = [
     origin.strip()
     for origin in csrf_trusted_origins.split(',')
